@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio professionnel - Découvrez mes projets et compétences"
+    />
+    <meta name="keywords" content="portfolio, développeur, web, projets" />
+    <meta name="author" content="Tom Bajoux" />
+
+    <title>Portfolio | Tom Bajoux</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/icon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/styles/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-logo">
+        <svg
+          viewBox="0 0 120 120"
+          class="logo-svg"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="60" cy="60" r="50" class="circle" />
+          <text x="50%" y="55%" text-anchor="middle" class="initials">TB</text>
+        </svg>
+        <p class="loader-text">Chargement...</p>
+      </div>
+    </div>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="/">
+            <img src="/icon.ico" alt="Logo" />
+          </a>
+        </div>
+        <ul class="nav__menu">
+          <li><a href="#accueil" class="nav__link">Accueil</a></li>
+          <li><a href="#apropos" class="nav__link">À propos</a></li>
+          <li><a href="#competences" class="nav__link">Compétences</a></li>
+          <li><a href="#projets" class="nav__link">Projets</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Menu de navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="accueil" class="hero">
+        <div class="container">
+          <h1 class="hero_title scramble">
+            Bonjour, je suis <span class="highlight">Tom Bajoux</span>
+          </h1>
+          <p class="hero__subtitle scramble">Développeur Web Junior</p>
+          <div class="hero__cta">
+            <a href="#projets" class="btn btn--primary">Voir mes projets</a>
+            <a href="#contact" class="btn btn--secondary">Me contacter</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="apropos" class="section">
+        <div class="container">
+          <h2 class="section__title">À propos de moi</h2>
+          <div class="about__content">
+            <div class="about__text">
+              <p>
+                Ancien coiffeur et barbier, j'ai choisi de me reconvertir dans
+                le développement web, une passion de longue date. Actuellement
+                en formation "Développeur Web" chez OpenClassrooms, je me
+                prépare à devenir développeur web junior.
+              </p>
+            </div>
+            <div class="about__image">
+              <img
+                src="/images/profile.jpg"
+                alt="Photo de profil de Tom Bajoux"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="competences" class="section section--gray">
+        <div class="container">
+          <h2 class="section__title">Mes compétences</h2>
+          <div class="skills__grid">
+            <!-- Les compétences seront ajoutées ici -->
+          </div>
+        </div>
+      </section>
+
+      <section id="projets" class="section">
+        <div class="container">
+          <h2 class="section__title">Mes projets</h2>
+          <div class="projects__grid">
+            <!-- Les projets seront ajoutés ici -->
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section--gray">
+        <div class="container">
+          <h2 class="section__title">Me contacter</h2>
+          <form class="contact__form" id="contact-form">
+            <div class="form__group">
+              <label for="nom">Nom complet</label>
+              <input type="text" id="nom" name="nom" required />
+            </div>
+
+            <div class="form__group">
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">
+              Envoyer le message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__social">
+            <a
+              href="https://github.com/votre-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/votre-profil"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </div>
+          <p class="footer__copyright">
+            &copy; 2024 Votre Nom. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="src/scripts/main.js"></script>
+  </body>
+</html>
