@@ -1,5 +1,5 @@
-@import "variables";
-@import "reset";
+@import 'variables';
+@import 'reset';
 
 * {
   margin: 0;
@@ -8,20 +8,21 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: $graphite;
   color: $silver-mist;
 }
 
 body::before {
   --size: 45px;
-  --line: rgba(255,255,255,0.12);
+  --line: rgba(255, 255, 255, 0.12);
   content: '';
   height: 100vh;
   width: 100vw;
   position: fixed;
   background:
-    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size)
+      var(--size),
     linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
   -webkit-mask: linear-gradient(-20deg, transparent 40%, white 80%);
   mask: linear-gradient(-20deg, transparent 40%, white 80%);
@@ -46,6 +47,10 @@ h1 {
 .header {
   width: 100%;
   border-bottom: 1px solid $silver-mist;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 /* Nav */
@@ -54,44 +59,33 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-}
 
-/* Nav__logo */
-.nav__logo {
-  width: 40px;
-  height: 40px;
-}
+  &__logo {
+    width: 40px;
+    height: 40px;
+  }
 
-/* Nav__menu */
-.nav__menu {
-  display: flex;
-  gap: 1rem;
-}
+  &__menu {
+    display: flex;
+    gap: 1rem;
+  }
 
-/* Nav__toggle */
-.nav__toggle {
-  display: none;
-}
+  &__link {
+    text-decoration: none;
+    color: $silver-mist;
+  }
 
-/* Nav__link */
-.nav__link {
-  text-decoration: none;
-  color: $silver-mist;
-}
+  &__link:hover {
+    color: $neon-azure;
+  }
 
-/* Nav__link:hover */
-.nav__link:hover {
-  color: $neon-azure;
-}
+  &__toggle {
+    display: none;
+  }
 
-/* Nav__toggle */
-.nav__toggle {
-  display: none;
-}
-
-/* Nav__toggle:hover */
-.nav__toggle:hover {
-  cursor: pointer;
+  &__toggle:hover {
+    cursor: pointer;
+  }
 }
 
 /* Hidden */
@@ -103,7 +97,6 @@ h1 {
   display: block;
 }
 
-// Styles pour les boutons CTA de la section "hero"
 .hero__cta {
   display: flex;
   gap: 1.5rem;
@@ -149,14 +142,21 @@ h1 {
   align-items: center;
   z-index: 9999;
   transition: opacity 0.5s ease;
+
+  &__logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__text {
+    margin-top: 1rem;
+    color: $silver-mist;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2s;
+  }
 }
 
-.loader-bar {
-  width: 100px;
-  height: 4px;
-  background: $neon-azure;
-  animation: loading 1.2s infinite ease-in-out;
-}
 
 @keyframes loading {
   0% {
@@ -188,17 +188,6 @@ h1 {
   animation: fadeInUp 1s ease-out both;
 }
 
-.loader-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo-svg {
-  width: 100px;
-  height: 100px;
-}
-
 .circle {
   fill: none;
   stroke: $neon-azure;
@@ -214,14 +203,6 @@ h1 {
   fill: $silver-mist;
   opacity: 0;
   animation: fadeIn 1s ease forwards 1.4s;
-}
-
-.loader-text {
-  margin-top: 1rem;
-  color: $silver-mist;
-  font-weight: 500;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards 2s;
 }
 
 @keyframes draw {
