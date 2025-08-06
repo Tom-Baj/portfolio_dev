@@ -1,3 +1,6 @@
+// ==========================
+// Importations et plugins GSAP
+// ==========================
 import { gsap } from 'gsap';
 
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
@@ -6,7 +9,10 @@ import { SplitText } from 'gsap/SplitText';
 
 gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, SplitText);
 
-export function scrambleTitle() {
+// ==========================
+// Effet : scrambleTitle
+// ==========================
+/* export function scrambleTitle() {
   gsap.registerEffect({
     name: 'scrambleSplit',
     plugins: 'scrambleText',
@@ -42,8 +48,11 @@ export function scrambleTitle() {
     x: 'random(-50, 50)',
     stagger: 0.05,
   });
-}
+} */
 
+// ==========================
+// Anciennes versions et exemples (commentés)
+// ==========================
 /* gsap.registerEffect({
 	name: "scrambleSplit",
 	plugins:"scrambleText",
@@ -57,11 +66,11 @@ export function scrambleTitle() {
 				l = chars.length;
 			proxy.innerText = split.chars.map(e => e.innerText).join("");
 			tl.add(gsap.to(proxy, vars).eventCallback("onUpdate", () => {
-					let i = l;
-					while (i--) {
-						chars[i].innerText = proxy.innerText.charAt(i);
-					}
-				}), 0);
+				let i = l;
+				while (i--) {
+					chars[i].innerText = proxy.innerText.charAt(i);
+				}
+			}), 0);
 		});
 		return tl;
 	}

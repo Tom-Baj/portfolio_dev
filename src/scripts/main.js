@@ -1,15 +1,25 @@
-import { scrambleTitle } from './animations.js';
-
-const loader = document.getElementById('loader');
+// ==========================
+// Importations
+// ==========================
+/* import { scrambleTitle } from './animations.js';
+ */
+// ==========================
+// Sélection des éléments du DOM
+// ==========================
+/* const loader = document.getElementById('loader'); */
 const header = document.querySelector('.header');
 const main = document.querySelector('.main');
 
-/* Scroll */
+// ==========================
+// Gestion du scroll (console)
+// ==========================
 window.addEventListener('scroll', () => {
   console.log(window.scrollY);
 });
 
-/* Loader */
+// ==========================
+// Loader (exemple commenté)
+// ==========================
 /* window.addEventListener('DOMContentLoaded', () => {
   if (header) header.classList.add('hidden');
   if (main) main.classList.add('hidden');
@@ -28,6 +38,9 @@ window.addEventListener('scroll', () => {
   }, 2500);
 }); */
 
+// ==========================
+// Affichage/Masquage du header au scroll
+// ==========================
 window.addEventListener('scroll', () => {
   if (window.scrollY === 0) {
     header.classList.add('hidden');

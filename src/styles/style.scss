@@ -1,6 +1,16 @@
+// ==========================
+// Variables
+// ==========================
 @import 'variables';
+
+// ==========================
+// Reset CSS
+// ==========================
 @import 'reset';
 
+// ==========================
+// Styles de base
+// ==========================
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +42,9 @@ body::before {
   z-index: -1;
 }
 
+// ==========================
+// Sections principales
+// ==========================
 section {
   height: 100vh;
   display: flex;
@@ -43,92 +56,9 @@ h1 {
   font-size: 4rem;
 }
 
-/* Header */
-.header {
-  width: 100%;
-  border-bottom: 1px solid $silver-mist;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
-
-/* Nav */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-
-  &__logo {
-    width: 40px;
-    height: 40px;
-  }
-
-  &__menu {
-    display: flex;
-    gap: 1rem;
-  }
-
-  &__link {
-    text-decoration: none;
-    color: $silver-mist;
-  }
-
-  &__link:hover {
-    color: $neon-azure;
-  }
-
-  &__toggle {
-    display: none;
-  }
-
-  &__toggle:hover {
-    cursor: pointer;
-  }
-}
-
-/* Hidden */
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
-}
-
-.hero__cta {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.btn {
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-
-.btn--primary {
-  background-color: $neon-azure;
-  color: $graphite;
-}
-
-.btn--secondary {
-  border: 1px solid $silver-mist;
-  color: $silver-mist;
-}
-
-.btn--primary:hover,
-.btn--secondary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
+// ==========================
+// Loader (commenté)
+// ==========================
 /*
 #loader {
   position: fixed;
@@ -157,7 +87,9 @@ h1 {
   }
 }
 
-
+// ==========================
+// Animations
+// ==========================
 @keyframes loading {
   0% {
     transform: scaleX(0.3);
@@ -217,3 +149,248 @@ h1 {
   }
 }
 */
+
+
+// ==========================
+// Header
+// ==========================
+.header {
+  width: 80%;
+  margin: 2rem auto 0 auto;
+  padding: 1rem 2.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-radius: 2rem;
+  background: rgba($graphite, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(60, 200, 245, 0.10), 0 1.5px 8px 0 rgba(166, 110, 255, 0.10);
+  backdrop-filter: blur(25px) brightness(1.1);
+  -webkit-backdrop-filter: blur(25px) brightness(1.1);
+  background-clip: padding-box;
+  transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: headerFadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  position: fixed;
+  overflow: visible;
+  opacity: 0.95;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 2rem;
+  padding: 2px;
+  background: linear-gradient(90deg, $neon-azure, $electric-lilac, $silver-mist, $neon-azure);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.header {
+  background-clip: padding-box;
+}
+
+.header:hover {
+  box-shadow: 0 8px 40px 0 $neon-azure, 0 1.5px 16px 0 $electric-lilac;
+  background: rgba($graphite, 0.95);
+  border-image: linear-gradient(90deg, $electric-lilac, $neon-azure, $silver-mist, $electric-lilac) 1;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// ==========================
+// Navigation (ajustements modernes)
+// ==========================
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+
+  &__logo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px 0 rgba(59, 200, 245, 0.15);
+    transition: box-shadow 0.3s;
+  }
+  &__logo img:hover {
+    box-shadow: 0 4px 16px 0 $neon-azure;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $silver-mist;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+    overflow: hidden;
+  }
+  &__link::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, $neon-azure, $electric-lilac);
+    border-radius: 2px;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &__link:hover {
+    color: $neon-azure;
+  }
+  &__link:hover::after {
+    width: 100%;
+  }
+
+  &__toggle {
+    display: none;
+  }
+}
+
+// ==========================
+// Utilitaires d'affichage
+// ==========================
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+// ==========================
+// Boutons & CTA
+// ==========================
+.hero__cta {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: $neon-azure;
+  color: $graphite;
+}
+
+.btn--secondary {
+  border: 1px solid $silver-mist;
+  color: $silver-mist;
+}
+
+.btn--primary:hover,
+.btn--secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+// ==========================
+// Section About
+// ==========================
+.about__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.about__text {
+  flex: 1 1 320px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: $silver-mist;
+  background: rgba($graphite, 0.7);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+}
+
+.about__image {
+  flex: 0 0 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid $neon-azure;
+  box-shadow: 0 4px 24px 0 rgba($neon-azure, 0.15);
+  background: $graphite;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.about__image img:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 8px 32px 0 rgba($neon-azure, 0.25);
+}
+
+@media (max-width: 900px) {
+  .about__content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .about__image {
+    justify-content: flex-start;
+  }
+  .about__image img {
+    margin: 0 auto;
+  }
+  .about__text {
+    padding: 1.5rem 1.2rem;
+  }
+}
