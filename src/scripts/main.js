@@ -1,12 +1,6 @@
 // ==========================
-// Importations
-// ==========================
-/* import { scrambleTitle } from './animations.js';
- */
-// ==========================
 // Sélection des éléments du DOM
 // ==========================
-/* const loader = document.getElementById('loader'); */
 const header = document.querySelector('.header');
 const main = document.querySelector('.main');
 
@@ -18,25 +12,13 @@ window.addEventListener('scroll', () => {
 });
 
 // ==========================
-// Loader (exemple commenté)
+// Parallax pour le quadrillage
 // ==========================
-/* window.addEventListener('DOMContentLoaded', () => {
-  if (header) header.classList.add('hidden');
-  if (main) main.classList.add('hidden');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  document.documentElement.style.setProperty('--scroll-y', scrollY);
+});
 
-  // Simuler la durée de l'animation du loader (2.5s ici)
-  setTimeout(() => {
-    if (loader) {
-      loader.classList.add('fade-out');
-      setTimeout(() => {
-        loader.style.display = 'none';
-        //if (header) header.classList.remove('hidden');
-        if (main) main.classList.remove('hidden');
-        scrambleTitle();
-      }, 500); // correspond à la transition CSS du loader
-    }
-  }, 2500);
-}); */
 
 // ==========================
 // Affichage/Masquage du header au scroll

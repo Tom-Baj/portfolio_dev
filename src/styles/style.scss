@@ -1,11 +1,7 @@
 // ==========================
-// Variables
+// Imports
 // ==========================
 @import 'variables';
-
-// ==========================
-// Reset CSS
-// ==========================
 @import 'reset';
 
 // ==========================
@@ -40,6 +36,8 @@ body::before {
   left: 0;
   pointer-events: none;
   z-index: -1;
+  transform: translateY(calc(var(--scroll-y, 0) * 0.3px));
+  will-change: transform;
 }
 
 // ==========================
@@ -55,100 +53,6 @@ section {
 h1 {
   font-size: 4rem;
 }
-
-// ==========================
-// Loader (commenté)
-// ==========================
-/*
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $graphite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-
-  &__logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  &__text {
-    margin-top: 1rem;
-    color: $silver-mist;
-    font-weight: 500;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards 2s;
-  }
-}
-
-// ==========================
-// Animations
-// ==========================
-@keyframes loading {
-  0% {
-    transform: scaleX(0.3);
-    opacity: 0.3;
-  }
-  50% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(0.3);
-    opacity: 0.3;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 1s ease-out both;
-}
-
-.circle {
-  fill: none;
-  stroke: $neon-azure;
-  stroke-width: 4;
-  stroke-dasharray: 314;
-  stroke-dashoffset: 314;
-  animation: draw 1.5s ease forwards;
-}
-
-.initials {
-  font-family: "Poppins", sans-serif;
-  font-size: 32px;
-  fill: $silver-mist;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards 1.4s;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-*/
 
 
 // ==========================
@@ -220,7 +124,7 @@ h1 {
 }
 
 // ==========================
-// Navigation (ajustements modernes)
+// Navigation
 // ==========================
 .nav {
   width: 100%;
@@ -286,7 +190,7 @@ h1 {
 }
 
 // ==========================
-// Utilitaires d'affichage
+// Affichage
 // ==========================
 .hidden {
   display: none;
