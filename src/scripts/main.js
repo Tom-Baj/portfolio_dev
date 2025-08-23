@@ -1,5 +1,8 @@
 // ==========================
 // Sélection des éléments du DOM
+
+import animateHighlight from "./animations";
+
 // ==========================
 const header = document.querySelector('.header');
 const main = document.querySelector('.main');
@@ -7,17 +10,9 @@ const main = document.querySelector('.main');
 // ==========================
 // Gestion du scroll (console)
 // ==========================
-window.addEventListener('scroll', () => {
+/* window.addEventListener('scroll', () => {
   console.log(window.scrollY);
-});
-
-// ==========================
-// Parallax pour le quadrillage
-// ==========================
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  document.documentElement.style.setProperty('--scroll-y', scrollY);
-});
+}); */
 
 
 // ==========================
@@ -32,3 +27,4 @@ window.addEventListener('scroll', () => {
     console.log('visible');
   }
 });
+

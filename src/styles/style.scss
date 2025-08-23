@@ -25,7 +25,7 @@ body::before {
   content: '';
   height: 100vh;
   width: 100vw;
-  position: fixed;
+  position: absolute;
   background:
     linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size)
       var(--size),
@@ -54,7 +54,6 @@ h1 {
   font-size: 4rem;
 }
 
-
 // ==========================
 // Header
 // ==========================
@@ -70,7 +69,7 @@ h1 {
   border-radius: 2rem;
   background: rgba($graphite, 0.85);
   box-shadow: 0 8px 32px 0 rgba(60, 200, 245, 0.10), 0 1.5px 8px 0 rgba(166, 110, 255, 0.10);
-  backdrop-filter: blur(25px) brightness(1.1);
+  backdrop-filter: blur(30px) brightness(1.5);
   -webkit-backdrop-filter: blur(25px) brightness(1.1);
   background-clip: padding-box;
   transition: box-shadow 0.3s, border 0.3s, background 0.3s;
@@ -235,7 +234,6 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 // ==========================
 // Section About
 // ==========================
@@ -282,6 +280,9 @@ h1 {
   box-shadow: 0 8px 32px 0 rgba($neon-azure, 0.25);
 }
 
+// ==========================
+// Media queries
+// ==========================
 @media (max-width: 900px) {
   .about__content {
     flex-direction: column;
@@ -296,5 +297,64 @@ h1 {
   }
   .about__text {
     padding: 1.5rem 1.2rem;
+  }
+}
+
+// ==========================
+// Media queries générales
+// ==========================
+@media (max-width: 1200px) {
+  .about__content {
+    gap: 2rem;
+  }
+  .about__text {
+    font-size: 1.05rem;
+    padding: 1.8rem 2rem;
+  }
+  .about__image img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about__content {
+    gap: 1.5rem;
+  }
+  .about__text {
+    font-size: 1rem;
+    padding: 1.5rem 1.5rem;
+  }
+  .about__image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__content {
+    gap: 1.2rem;
+  }
+  .about__text {
+    font-size: 0.98rem;
+    padding: 1.2rem 1rem;
+  }
+  .about__image img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about__content {
+    gap: 1rem;
+  }
+  .about__text {
+    font-size: 0.95rem;
+    padding: 1rem 0.7rem;
+  }
+  .about__image img {
+    width: 90px;
+    height: 90px;
   }
 }
