@@ -199,6 +199,14 @@ h1 {
   display: block;
 }
 
+.section__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: $silver-mist;
+  text-align: center;
+}
+
 // ==========================
 // Boutons & CTA
 // ==========================
@@ -243,7 +251,30 @@ h1 {
   gap: 2.5rem;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin: 3rem;
+}
+
+.about__image {
+  flex: 0 0 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__image img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  /* border-radius: 50%; */
+  border-right: 4px solid $neon-azure;
+  box-shadow: 0 4px 24px 0 rgba($neon-azure, 0.15);
+  background: $graphite;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+.about__image img:hover {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow: 0 8px 32px 0 rgba($neon-azure, 0.25);
 }
 
 .about__text {
@@ -257,28 +288,7 @@ h1 {
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
 }
 
-.about__image {
-  flex: 0 0 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.about__image img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid $neon-azure;
-  box-shadow: 0 4px 24px 0 rgba($neon-azure, 0.15);
-  background: $graphite;
-  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
-}
-
-.about__image img:hover {
-  transform: scale(1.06) rotate(-2deg);
-  box-shadow: 0 8px 32px 0 rgba($neon-azure, 0.25);
-}
 
 // ==========================
 // Media queries

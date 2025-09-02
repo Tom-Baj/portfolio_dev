@@ -1,11 +1,9 @@
 // ==========================
 // Sélection des éléments du DOM
 
-import animateHighlight from "./animations";
 
 // ==========================
 const header = document.querySelector('.header');
-const main = document.querySelector('.main');
 
 // ==========================
 // Gestion du scroll (console)
