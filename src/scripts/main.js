@@ -1,7 +1,7 @@
+import './animations';
+
 // ==========================
 // Sélection des éléments du DOM
-
-
 // ==========================
 const header = document.querySelector('.header');
 

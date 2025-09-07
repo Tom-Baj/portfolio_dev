@@ -13,7 +13,7 @@
     <title>Portfolio | Tom Bajoux</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/icon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="src/styles/style.css" />
@@ -34,6 +34,7 @@
             <img src="/icon.ico" alt="Logo" />
           </a>
         </div>
+        <div class="nav__content">
         <ul class="nav__menu">
           <li><a href="#accueil" class="nav__link">Accueil</a></li>
           <li><a href="#apropos" class="nav__link">À propos</a></li>
@@ -46,16 +47,19 @@
           <span></span>
           <span></span>
         </button>
+      </div>
       </nav>
     </header>
 
     <main class="main">
       <section id="home" class="hero">
         <div class="container">
-          <h1 class="hero_title scramble split">
-            Bonjour, <br>Je suis <span class="highlight">Tom Bajoux</span>
+          <div class="container__hero">
+          <h1 class="hero__title">
+          Tom Bajoux
           </h1>
-          <p class="hero__subtitle scramble">Développeur Web</p>
+          <p class="hero__subtitle">Développeur Web</p>
+        </div>
           <div class="hero__cta">
             <a href="#projets" class="btn btn--primary">Voir mes projets</a>
             <a href="#contact" class="btn btn--secondary">Me contacter</a>
@@ -70,14 +74,13 @@
             <div class="about__image">
               <img src="/assets/images/tom.png" alt="Photo de profil de Tom Bajoux" />
             </div>
-            <div class="about__text">
+            <div class="about__text about__text--split">
               <p>
                 Ancien coiffeur et barbier, j'ai choisi de me reconvertir dans le développement web,
-                une passion de longue date. Actuellement en formation "Développeur Web" chez
+                une passion de longue date. Après une formation "Développeur Web" chez
                 OpenClassrooms, je me prépare à devenir développeur web junior.
               </p>
             </div>
-
           </div>
         </div>
       </section>
